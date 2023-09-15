@@ -9,10 +9,10 @@ Subject: [PATCH somebar] clickable tags using wtype
  src/main.cpp       | 15 +++++++++++++++
  4 files changed, 24 insertions(+), 1 deletion(-)
 
-diff --git a/src/bar.cpp b/src/bar.cpp
+diff --git src/bar.cpp src/bar.cpp
 index af92f49..8b68759 100644
---- a/src/bar.cpp
-+++ b/src/bar.cpp
+--- src/bar.cpp
++++ src/bar.cpp
 @@ -182,9 +182,10 @@ void Bar::click(Monitor* mon, int x, int, int btn)
  	} else if (x > _layoutCmp.x) {
  		control = ClkLayoutSymbol;
@@ -25,10 +25,10 @@ index af92f49..8b68759 100644
  			argp = &arg;
  			break;
  		}
-diff --git a/src/common.hpp b/src/common.hpp
+diff --git src/common.hpp src/common.hpp
 index c905358..a386029 100644
---- a/src/common.hpp
-+++ b/src/common.hpp
+--- src/common.hpp
++++ src/common.hpp
 @@ -39,6 +39,8 @@ extern wl_compositor* compositor;
  extern wl_shm* shm;
  extern zwlr_layer_shell_v1* wlrLayerShell;
@@ -38,10 +38,10 @@ index c905358..a386029 100644
  void spawn(Monitor&, const Arg& arg);
  void setCloexec(int fd);
  [[noreturn]] void die(const char* why);
-diff --git a/src/config.def.hpp b/src/config.def.hpp
+diff --git src/config.def.hpp src/config.def.hpp
 index 40a8c95..de193ea 100644
---- a/src/config.def.hpp
-+++ b/src/config.def.hpp
+--- src/config.def.hpp
++++ src/config.def.hpp
 @@ -4,6 +4,9 @@
  #pragma once
  #include "common.hpp"
@@ -60,10 +60,10 @@ index 40a8c95..de193ea 100644
 +	{ ClkTagBar,       BTN_RIGHT,  tag,        {0} },
  	{ ClkStatusText,   BTN_RIGHT,  spawn,      {.v = termcmd} },
  };
-diff --git a/src/main.cpp b/src/main.cpp
+diff --git src/main.cpp src/main.cpp
 index 6274959..3c35b20 100644
---- a/src/main.cpp
-+++ b/src/main.cpp
+--- src/main.cpp
++++ src/main.cpp
 @@ -85,6 +85,21 @@ static int statusFifoFd {-1};
  static int statusFifoWriter {-1};
  static bool quitting {false};
